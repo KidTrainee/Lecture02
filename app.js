@@ -6,11 +6,8 @@ var student = {
 document.addEventListener('DOMContentLoaded', contentLoaded);
 
 function contentLoaded(event){
-  document.getElementById('name').addEventListener("keyup",keyUp);
-}
-
-function keyUp(event) {
-  calculateNumericOutput();
+  document.getElementById('name').addEventListener("keyup",calculateNumericOutput);
+  document.getElementById('output').innerText = "Total value is " + totalNameValue;
 }
 
 function calculateNumericOutput(){
@@ -20,7 +17,4 @@ function calculateNumericOutput(){
   for (var i = 0; i< student.name.length;i++) {
     totalNameValue += student.name.charCodeAt(i);
   }
-
-  var output = "Total value is " + totalNameValue;
-  document.getElementById('output').innerText = output;
 }
